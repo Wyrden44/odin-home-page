@@ -1,7 +1,7 @@
 {
-  "name": "odin-template",
+  "name": "odin-home-page",
   "version": "1.0.0",
-  "description": "This is a template for Odin projects",
+  "description": "This is a first draft of a portfolio website",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --open",

@@ -1,12 +1,12 @@
 # odin-restaurant-page
-## Odin - Project {nr}: {title}
+## Odin - Project #13: Home Page
 
-{info}
+This is a first draft of a portfolio website using everything learned in the Advanced HTML and CSS course.
 
 ## General Info
-Date: {date}
+Date: 08.08.2025
 
-Hours Working per Day: {hw}
+Hours Working per Day: 4
 
 Finish: {date}
 
@@ -19,4 +19,6 @@ Hours Worked: {hw}
 ### Progress on Node.js Path
 Intermediate HTML and CSS: ✅ Complete
 
-Javascript Course: {p}
+Javascript Course: ✅ Complete
+
+Advanced HTML and CSS: ✅ Complete
