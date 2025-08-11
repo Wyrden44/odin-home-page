@@ -1,5 +1,344 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    --main-bg: #121f28;
+    --main: #EDEDED;
+    --accent: #fc7155;
+    --accent-2nd: #FACC15;
+    --grey: #272727;
+    font-family: "Roboto", "Babas Neue", sans-serif;
+    color: var(--main);
+    background-color: var(--main-bg);
+}
+
+.introduction {
+    padding: 100px 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+    position: relative;
+}
+
+.bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(to top, var(--main-bg) 10%, transparent);
+    z-index: 1;
+}
+
+header {
+    flex: 0 0 600px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+
+    z-index: 2;
+}
+
+header h1:first-child {
+    font-size: 3rem;
+}
+
+header h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+header h1:first-child > .comma {
+    color: var(--accent);
+}
+
+.role {
+    display: inline-block;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    font-size: 3rem;
+    margin-top: 15px;
+    height: 3rem;
+    font-weight: 700;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.role::before {
+    content: "";
+    background-color: var(--accent);
+    width: 120px;
+    height: 2px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+header h2::before {
+    content: "";
+    background-color: var(--accent);
+    width: 60px;
+    height: 2px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.person {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.person picture {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.background-glow {
+    opacity: 0.85;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 20px solid var(--accent);
+    width: 350px;
+    height: 350px;
+
+    box-shadow:
+        0 0 40px 20px var(--accent),
+        inset 0 0 40px 20px var(--accent);
+}
+
+.background-glow::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-100%, -50%);
+    content: "<";
+    font-size: 100px;
+    font-weight: 900;
+    color: var(--accent);
+
+    text-shadow:
+        0 0 20px var(--accent),
+        0 0 20px var(--accent),
+        0 0 40px var(--accent),
+        0 0 80px var(--accent);
+}
+
+.background-glow::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(100%, 50%);
+    content: ">";
+    font-size: 100px;
+    font-weight: 900;
+    color: var(--accent);
+
+    text-shadow:
+        0 0 20px var(--accent),
+        0 0 20px var(--accent),
+        0 0 40px var(--accent),
+        0 0 80px var(--accent);
+}
+
+.skills {
+    --main-bg: #19242c;
+    background-color: var(--main-bg);
+    padding: 0 10px;
+    overflow: hidden;
+    width: 100%;
+
+    display: flex;
+}
+
+.skills > ul {
+    flex: 0 0 100%;
+    height: 60px;
+
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    --main: #EDEDED55;
+    color: var(--main);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    animation: scroll 40s linear infinite;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1 0 auto;
+    position: relative;
+    padding: 0 2rem;
+    text-align: center;
+    height: 100%;
+
+    transition: 0.2s ease-in-out;
+}
+
+.skill::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50%;
+    width: 1px;
+    background-color: var(--main);
+}
+
+.skill:hover {
+    color: #EDEDED;
+}
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); } /* move one set width */
+}
+
+.projects {
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    justify-items: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.projects > h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.projects-list {
+    width: 100%;
+    max-width: 1500px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    column-gap: 40px;
+    row-gap: 50px;
+
+    background-color: #19242c;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.project {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    /* background: linear-gradient(-45deg, var(--main-bg) 5%, #19242c); */
+    background-color: #1d2830;
+    box-shadow: 10px 10px 30px -15px #0d0e13;
+}
+
+.project-image {
+    display: block;
+    grid-area: picture;
+    object-fit: cover;
+    width: 100%;
+    height: 175px;
+    flex-shrink: 0;
+}
+
+.project-text {
+    padding: 10px 20px 25px;
+    display: grid;
+    grid-template-columns: 1fr 30px 30px;
+    grid-template-rows: 30px 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+    align-items: center;
+    grid-template-areas: 
+        "heading github open"
+        "description description description"
+        ;
+}
+
+.project-name {
+    grid-area: heading;
+    font-size: 1.5rem;
+}
+
+.project-description {
+    grid-area: description;
+}
+
+.project a {
+    text-decoration: none;
+    color: var(--main);
+}
+
+.github-logo {
+    grid-area: github;
+    width: 22px;
+    height: 22px;
+}
+
+.open {
+    grid-area: open;
+    width: 25px;
+    height: 25px;
+}
+
+.github-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.live-preview {
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    margin-top: 100px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #19242c;
+}
+
+.links {
+    margin: 20px 0;
+}
+
+.links ul li {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+.links ul {
+    list-style-type: none;
+}
+
+.links img{
+    width: 3rem;
+    height: 3rem;
+}
