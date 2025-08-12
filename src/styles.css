@@ -221,9 +221,8 @@ header h2::before {
 }
 
 .projects {
-    display: grid;
-    grid-template-rows: 80px 1fr;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     margin-top: 40px;
 }
@@ -231,10 +230,13 @@ header h2::before {
 .projects > h1 {
     font-size: 2.5rem;
     margin-bottom: 30px;
+
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 13px;
 }
 
 .projects-list {
-    width: 100%;
     max-width: 1500px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -244,6 +246,9 @@ header h2::before {
     background-color: #19242c;
     border-radius: 10px;
     padding: 30px;
+
+    width: 100%;
+    margin: 0 auto;
 }
 
 .project {
@@ -255,6 +260,16 @@ header h2::before {
     /* background: linear-gradient(-45deg, var(--main-bg) 5%, #19242c); */
     background-color: #1d2830;
     box-shadow: 10px 10px 30px -15px #0d0e13;
+
+    border: 2px solid transparent;
+
+    transition: border ease 0.4s, background-color ease 0.4s, box-shadow ease 0.4s;
+}
+
+.project:hover {
+    border: 2px solid var(--accent);
+    background-color: #26323b;
+    box-shadow: 10px 10px 30px -5px #0d0e13;
 }
 
 .project-image {
@@ -283,6 +298,7 @@ header h2::before {
 .project-name {
     grid-area: heading;
     font-size: 1.5rem;
+    white-space: nowrap;
 }
 
 .project-description {
@@ -341,4 +357,9 @@ footer {
 .links img{
     width: 3rem;
     height: 3rem;
+}
+
+@media (max-width: 1150px) {
+    /* tablet */
+
 }
