@@ -19,7 +19,22 @@
             <div class="person">
                 <div class="background-glow"></div>
                 <picture>
-                    <img src="./assets/images/portraitPawel.png" width="300" alt="Portrait of Pawel in suit">
+                    <source
+                        src="./assets/images/portraitPawel.png"
+                        media="(min-width: 1200px)"
+                        alt="Portrait of Pawel in suit"
+                    />
+                    <source
+                        src="./assets/images/portraitPawelSmall.png"
+                        media="(min-width: 600px)"
+                        alt="Portrait of Pawel in suit"
+                    />
+                    <img
+                        src="./assets/images/portraitPawel.png"
+                        media="(min-width: 1200px)"
+                        width="300"
+                        alt="Portrait of Pawel in suit"
+                    >
                 </picture>
             </div>
             <div class="bottom-fade"></div>

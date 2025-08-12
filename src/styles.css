@@ -35,6 +35,9 @@ body {
 }
 
 header {
+    --base-font: 3rem;
+    font-size: var(--base-font);
+
     flex: 0 0 600px;
     display: flex;
     align-items: start;
@@ -46,11 +49,11 @@ header {
 }
 
 header h1:first-child {
-    font-size: 3rem;
+    font-size: 1em;
 }
 
 header h2 {
-    font-size: 2.5rem;
+    font-size: 0.85em;
     font-weight: 400;
 }
 
@@ -61,9 +64,9 @@ header h1:first-child > .comma {
 .role {
     display: inline-block;
     transition: opacity 0.6s ease, transform 0.6s ease;
-    font-size: 3rem;
+    font-size: 1em;
     margin-top: 15px;
-    height: 3rem;
+    height: 1em;
     font-weight: 700;
 }
 
@@ -361,5 +364,81 @@ footer {
 
 @media (max-width: 1150px) {
     /* tablet */
+    .person {
+        width: 250px;
+        height: 250px;
+    }
 
+    .person picture img {
+        width: 200px;
+        height: auto;
+    }
+
+    .background-glow {
+        width: 250px;
+        height: 250px;
+        border-width: 15px;
+    }
+
+    .background-glow::before {
+        font-size: 80px;
+        font-weight: 800;
+    }
+
+    .background-glow::after {
+        font-size: 80px;
+        font-weight: 800;
+    }
+
+    header {
+        --base-font: 2.5rem;
+        flex-basis: 500px;
+    }
+    .skill {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .introduction {
+        flex-direction: column;
+        justify-content: start;
+        padding: 0 0 25px;
+    }
+
+    header {
+        flex-basis: 300px;
+        align-items: center;
+    }
+
+    header h2::before {
+        display: none;
+    }
+
+    header h2{
+        text-decoration: underline;
+        text-decoration-color: var(--accent);
+        text-underline-offset: 10px;
+        text-decoration-skip: all;
+        text-decoration-thickness: 2px;
+        margin-top: 0;
+    }
+
+    .role {
+        margin: 25px 0 10px;
+    }
+
+    .role::before {
+        display: none;
+    }
+
+    .skills > ul {
+        height: 50px;
+    }
+}
+
+@media (max-width: 380px) {
+    header {
+        --base-font: 2rem;
+    }
 }
