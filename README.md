@@ -8,9 +8,9 @@ Date: 08.08.2025
 
 Hours Working per Day: 4
 
-Finish: {date}
+Finish: 12.08.25
 
-Hours Worked: {hw}
+Hours Worked: 8
 
 ## Progress
 ### Progress on Foundations Course: 
